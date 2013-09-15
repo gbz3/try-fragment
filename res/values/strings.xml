@@ -1,6 +1,10 @@
 <resources>
 
     <string name="app_name">Frag</string>
-    <string name="hello">Hello Fragment!</string>
-    
+    <string name="tab_title_map">MAP</string>
+    <string name="tab_title_ar">AR</string>
+
+    <string name="tab_text_map">Hello MAP Fragment!!</string>
+    <string name="tab_text_ar">Hello AR Fragment!!</string>
+
 </resources>
