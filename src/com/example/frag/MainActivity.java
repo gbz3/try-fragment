@@ -9,10 +9,25 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
+	// ActionBar のタブ選択位置
+	private static final String TAB_INDEX_FRAG = "TAB_INDEX_FRAG";
+
 	@Override
 	public void onCreate( Bundle savedInstanceState ) {
 		super.onCreate(savedInstanceState);
 		createTab( savedInstanceState );
+	}
+
+	@Override
+	protected void onSaveInstanceState( Bundle inState ) {
+		super.onSaveInstanceState( inState );
+		inState.putInt( TAB_INDEX_FRAG, getActionBar().getSelectedNavigationIndex() );
+	}
+
+	@Override
+	protected void onRestoreInstanceState( Bundle inState ) {
+		super.onRestoreInstanceState( inState );
+		getActionBar().setSelectedNavigationItem( inState.getInt( TAB_INDEX_FRAG ) );
 	}
 
 	private void createTab( Bundle inState ) {
